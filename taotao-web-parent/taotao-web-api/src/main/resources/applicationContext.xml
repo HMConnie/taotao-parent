@@ -14,8 +14,6 @@
 
     <apollo:config namespaces="application"/>
 
-    <context:property-placeholder location="classpath:properties/resource.properties"/>
-
     <!-- 配置注解驱动 -->
     <mvc:annotation-driven/>
     <!-- 视图解析器 -->

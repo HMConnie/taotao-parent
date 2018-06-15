@@ -15,11 +15,11 @@ import java.util.Map;
 @Controller
 public class PicController {
 
-    @Value("${LOCAL_IMAGE_DIR}")
+    @Value("${upload.file.root.path}")
     private String localImageDir;
 
 
-    @Value("${IMAGE_URL}")
+    @Value("${upload.file.root.ur}")
     private String imageUrl;
 
     @RequestMapping("/pic/upload")
