@@ -1,0 +1,92 @@
+<!DOCTYPE generatorConfiguration
+        PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+
+<generatorConfiguration>
+    <classPathEntry
+            location="/Users/yangkang/Library/maven/mysql/mysql-connector-java/5.1.45/mysql-connector-java-5.1.45.jar"/>
+
+    <context id="DB2Tables" targetRuntime="MyBatis3">
+
+        <plugin type="com.zxg.MySQLLimitPlugin"/>
+        <plugin type="com.zxg.LockExampleClassPlugin"/>
+        <plugin type="com.zxg.SerializablePlugin"/>
+        <commentGenerator>
+            <property name="suppressAllComments" value="true"/>
+            <property name="suppressDate" value="true"/>
+            <property name="addRemarkComments" value="false"/>
+        </commentGenerator>
+
+        <jdbcConnection driverClass="com.mysql.jdbc.Driver"
+                        connectionURL="jdbc:mysql://127.0.0.1:3306/taotao"
+                        userId="root"
+                        password="123456">
+        </jdbcConnection>
+
+        <javaTypeResolver>
+            <property name="forceBigDecimals" value="false"/>
+        </javaTypeResolver>
+
+        <javaModelGenerator targetPackage="com.taotao.service.core.entity"
+                            targetProject="src/main/java">
+            <property name="enableSubPackages" value="true"/>
+            <property name="trimStrings" value="false"/>
+        </javaModelGenerator>
+
+        <sqlMapGenerator targetPackage="com.taotao.service.core.dao"
+                         targetProject="src/main/java">
+            <property name="enableSubPackages" value="true"/>
+        </sqlMapGenerator>
+
+        <javaClientGenerator type="XMLMAPPER" targetPackage="com.taotao.service.core.dao"
+                             targetProject="src/main/java">
+            <property name="enableSubPackages" value="true"/>
+        </javaClientGenerator>
+        <table tableName="tb_user" enableCountByExample="true"
+               enableUpdateByExample="true" enableDeleteByExample="true" enableSelectByExample="true"
+               selectByExampleQueryId="true" domainObjectName="User">
+        </table>
+        <table tableName="tb_content" enableCountByExample="true"
+               enableUpdateByExample="true" enableDeleteByExample="true" enableSelectByExample="true"
+               selectByExampleQueryId="true" domainObjectName="Content">
+        </table>
+        <table tableName="tb_content_category" enableCountByExample="true"
+               enableUpdateByExample="true" enableDeleteByExample="true" enableSelectByExample="true"
+               selectByExampleQueryId="true" domainObjectName="ContentCategory">
+        </table>
+        <table tableName="tb_item" enableCountByExample="true"
+               enableUpdateByExample="true" enableDeleteByExample="true" enableSelectByExample="true"
+               selectByExampleQueryId="true" domainObjectName="Item">
+        </table>
+        <table tableName="tb_item_cat" enableCountByExample="true"
+               enableUpdateByExample="true" enableDeleteByExample="true" enableSelectByExample="true"
+               selectByExampleQueryId="true" domainObjectName="ItemCat">
+        </table>
+        <table tableName="tb_item_desc" enableCountByExample="true"
+               enableUpdateByExample="true" enableDeleteByExample="true" enableSelectByExample="true"
+               selectByExampleQueryId="true" domainObjectName="ItemDesc">
+        </table>
+        <table tableName="tb_item_param" enableCountByExample="true"
+               enableUpdateByExample="true" enableDeleteByExample="true" enableSelectByExample="true"
+               selectByExampleQueryId="true" domainObjectName="ItemParam">
+        </table>
+        <table tableName="tb_item_param_item" enableCountByExample="true"
+               enableUpdateByExample="true" enableDeleteByExample="true" enableSelectByExample="true"
+               selectByExampleQueryId="true" domainObjectName="ItemParamItem">
+        </table>
+        <table tableName="tb_order" enableCountByExample="true"
+               enableUpdateByExample="true" enableDeleteByExample="true" enableSelectByExample="true"
+               selectByExampleQueryId="true" domainObjectName="Order">
+        </table>
+        <table tableName="tb_order_item" enableCountByExample="true"
+               enableUpdateByExample="true" enableDeleteByExample="true" enableSelectByExample="true"
+               selectByExampleQueryId="true" domainObjectName="OrderItem">
+        </table>
+        <table tableName="tb_order_shipping" enableCountByExample="true"
+               enableUpdateByExample="true" enableDeleteByExample="true" enableSelectByExample="true"
+               selectByExampleQueryId="true" domainObjectName="OrderShipping">
+        </table>
+
+
+    </context>
+</generatorConfiguration>
